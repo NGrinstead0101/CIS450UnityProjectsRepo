@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -48,6 +49,12 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             Jump();
+        }
+
+        // Reset objects
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
         }
 
         // Randomize movement behavoirs
