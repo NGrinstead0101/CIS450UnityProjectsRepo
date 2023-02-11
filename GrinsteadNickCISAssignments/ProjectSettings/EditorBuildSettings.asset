@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Assignment2-StrategyPattern.unity
     guid: 75849cada2130dd49903583bb3714d1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Assignment3-ObserverPattern.unity
     guid: aca29fe4a0ccedc48845dccff6b1afb9
+  - enabled: 1
+    path: Assets/Scenes/Assignment4-DecoratorPattern.unity
+    guid: 2f5ee38237d3fe841868fc3165be69fe
   m_configObjects: {}
