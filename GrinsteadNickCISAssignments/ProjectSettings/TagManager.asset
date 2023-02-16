@@ -9,6 +9,7 @@ TagManager:
   - MovingObject
   - Wall
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
