@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Ground
   - Enemy
+  - Arrow
   layers:
   - Default
   - TransparentFX
