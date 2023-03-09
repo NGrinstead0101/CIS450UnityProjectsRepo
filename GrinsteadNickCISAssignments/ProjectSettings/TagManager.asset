@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Enemy
   - Arrow
+  - Receiver
   layers:
   - Default
   - TransparentFX
