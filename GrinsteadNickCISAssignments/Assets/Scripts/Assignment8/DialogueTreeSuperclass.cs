@@ -1,3 +1,10 @@
+/*
+ * Nick Grinstead
+ * DialogueTreeSuperclass.cs
+ * Assignment 8
+ * This abstract class acts as a template for the process of moving through a 
+ * dialogue tree. This is meant to be attached to an NPC gameobject.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +21,11 @@ public abstract class DialogueTreeSuperclass : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI textObject;
     protected SpriteRenderer spriteRenderer;
 
+    /// <summary>
+    /// Acts as a template method that displays a message, displays options, and
+    /// then checks if a parting message should be displayed
+    /// </summary>
+    /// <returns>An amount of time to wait</returns>
     public IEnumerator BeginDialogue()
     {
         while (true)
@@ -50,17 +62,33 @@ public abstract class DialogueTreeSuperclass : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Abstract step to reveal a message or messages
+    /// </summary>
     protected abstract void DisplayMessage();
 
+    /// <summary>
+    /// Abstract step to display any dialogue/conversation options
+    /// </summary>
     protected abstract void DisplayOptions();
 
+    /// <summary>
+    /// Abstract step to display a parting message
+    /// </summary>
     protected abstract void DisplayPartingMessage();
 
+    /// <summary>
+    /// Hook used to check if the conversation is over
+    /// </summary>
+    /// <returns>A bool that's true by default</returns>
     protected virtual bool IsDoneTalking()
     {
         return true;
     }
 
+    /// <summary>
+    /// Ends the dialogue and resets the dialogue tree
+    /// </summary>
     protected virtual void EndDialogue()
     {
         StopAllCoroutines();
@@ -77,6 +105,9 @@ public abstract class DialogueTreeSuperclass : MonoBehaviour
         currentStep = dialogueStep.showMessage;
     }
 
+    /// <summary>
+    /// Starts a conversation when the attached NPC is clicked
+    /// </summary>
     protected void OnMouseDown()
     {
         if (!isTalking)
@@ -94,11 +125,17 @@ public abstract class DialogueTreeSuperclass : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// To be called elsewhere to allow the function to advance to the next step
+    /// </summary>
     public void GiveContinueInput()
     {
         inputGiven = true;
     }
 
+    /// <summary>
+    /// Setting spriterenderer reference
+    /// </summary>
     protected void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
