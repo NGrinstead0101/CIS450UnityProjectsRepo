@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface State
 {
-    public abstract void Steer(int direction);
+    public abstract float Steer(int direction);
 
     public abstract void Boost();
 

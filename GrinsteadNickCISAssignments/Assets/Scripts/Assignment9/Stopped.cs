@@ -11,9 +11,10 @@ public class Stopped : State
         this.context = context;
     }
 
-    public void Steer(int direction)
+    public float Steer(int direction)
     {
         Debug.Log("You can't drive when stopped");
+        return 0;
     }
 
     public void Boost()
@@ -23,6 +24,7 @@ public class Stopped : State
 
     public void OnWait()
     {
+        Debug.Log("State is Speed1");
         context.currentState = CarContext.speed1State;
     }
 

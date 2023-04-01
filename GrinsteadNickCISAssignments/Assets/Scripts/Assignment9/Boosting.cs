@@ -11,23 +11,25 @@ public class Boosting : State
         this.context = context;
     }
 
-    public void Steer(int direction)
+    public float Steer(int direction)
     {
         // handle driving at boost speed
+        return direction * 20;
     }
 
     public void Boost()
     {
-        context.currentState = CarContext.boostState;
+        Debug.Log("You're already boosting");
     }
 
     public void OnWait()
     {
+        Debug.Log("State is Speed2");
         context.currentState = CarContext.speed2State;
     }
 
     public void OnCollision()
     {
-        context.currentState = CarContext.stoppedState;
+        Debug.Log("You can't crash while boosting");
     }
 }
