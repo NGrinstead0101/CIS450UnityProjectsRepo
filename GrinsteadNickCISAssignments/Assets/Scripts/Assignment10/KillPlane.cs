@@ -23,7 +23,7 @@ public class KillPlane : MonoBehaviour
 
         if (temp.CompareTag("Box"))
         {
-            boxSpawner.DespawnBox();
+            boxSpawner.DespawnBox(temp);
         }
         else if (temp.CompareTag("Player"))
         {

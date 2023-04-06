@@ -11,7 +11,7 @@ using UnityEngine;
 public class BoxSpawner : MonoBehaviour
 {
     ObjectPooler objectPooler;
-    GameObject activeBox;
+    public List<GameObject> activeBoxes = new List<GameObject>();
 
     /// <summary>
     /// Sets reference to ObjectPooler and spawns a box
@@ -20,7 +20,7 @@ public class BoxSpawner : MonoBehaviour
     {
         objectPooler = ObjectPooler.uniqueInstance;
 
-        activeBox = objectPooler.SpawnFromPool("Box", transform.position, Quaternion.identity);
+        activeBoxes.Add(objectPooler.SpawnFromPool("Box", transform.position, Quaternion.identity));
     }
 
     /// <summary>
@@ -30,22 +30,31 @@ public class BoxSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (activeBox != null)
+            //if (activeBox != null)
+            //{
+            //    DespawnBox();
+            //}
+
+            GameObject tempBox = objectPooler.SpawnFromPool("Box", transform.position, Quaternion.identity);
+
+            if (tempBox == null)
             {
-                DespawnBox();
+                DespawnBox(activeBoxes[0]);
+
+                tempBox = objectPooler.SpawnFromPool("Box", transform.position, Quaternion.identity);
             }
 
-            activeBox = objectPooler.SpawnFromPool("Box", transform.position, Quaternion.identity);
+            activeBoxes.Add(tempBox);
         }
     }
 
     /// <summary>
     /// Called to despawn the active box
     /// </summary>
-    public void DespawnBox()
+    public void DespawnBox(GameObject returnBox)
     {
-        objectPooler.ReturnObjectToPool("Box", activeBox);
+        objectPooler.ReturnObjectToPool("Box", returnBox);
 
-        activeBox = null;
+        activeBoxes.Remove(returnBox);
     }
 }

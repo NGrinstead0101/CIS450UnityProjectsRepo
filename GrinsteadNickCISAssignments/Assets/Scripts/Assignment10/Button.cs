@@ -27,6 +27,18 @@ public class Button : MonoBehaviour
     }
 
     /// <summary>
+    /// Displays a message if a box is on the button
+    /// </summary>
+    /// <param name="collision">Data related to a collision</param>
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            displayText.text = "Congratulations!\nYou got the box to the button!";
+        }
+    }
+
+    /// <summary>
     /// Removes the message if a box is no longer on the button
     /// </summary>
     /// <param name="collision">Data related to a collision</param>

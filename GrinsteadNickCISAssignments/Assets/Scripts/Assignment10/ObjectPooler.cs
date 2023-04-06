@@ -61,7 +61,7 @@ public class ObjectPooler : MonoBehaviour
     /// <returns>The GameObject that was spawned</returns>
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        if (poolDictionary.ContainsKey(tag) == false)
+        if (poolDictionary.ContainsKey(tag) == false || poolDictionary[tag].Count == 0)
         {
             return null;
         }
