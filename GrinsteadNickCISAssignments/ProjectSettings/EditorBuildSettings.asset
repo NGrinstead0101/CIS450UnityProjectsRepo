@@ -29,10 +29,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Assignment8-TemplatePattern.unity
     guid: a5707b4cd126d124cadf494029a5992e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StateGameMenu.unity
     guid: 1e491d28178667d45ab0a844567eaafd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Assignment9-StatePattern.unity
     guid: 8ecbc38d795092f4fa3433dbad008256
+  - enabled: 1
+    path: Assets/Scenes/Assignment10-SingletonObjectPooling.unity
+    guid: be20c8420da17c04fb9faef16f3a5fa5
   m_configObjects: {}

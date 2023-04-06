@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Arrow
   - Receiver
+  - Box
   layers:
   - Default
   - TransparentFX
