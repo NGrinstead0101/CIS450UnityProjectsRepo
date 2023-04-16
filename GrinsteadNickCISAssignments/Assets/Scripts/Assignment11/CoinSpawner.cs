@@ -19,7 +19,7 @@ public class CoinSpawner : MonoBehaviour
     /// <summary>
     /// Sets reference to the ObjectPooler
     /// </summary>
-    private void Awake()
+    private void Start()
     {
         objectPool = ObjectPooler.uniqueInstance;
     }

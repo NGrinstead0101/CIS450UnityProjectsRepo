@@ -475,7 +475,6 @@ MonoBehaviour:
   - {x: 0.1, y: -1.4}
   - {x: 5.35, y: 0.55}
   - {x: -8, y: 1.5}
-  coinPrefab: {fileID: 6675112669052504909, guid: e6ef1e4e48b549b47ad330ab83930f96, type: 3}
 --- !u!114 &565465809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +491,6 @@ MonoBehaviour:
   - {x: -6.4, y: -2.8}
   - {x: -2.5, y: 3.6}
   - {x: -8, y: 1}
-  enemyPrefab: {fileID: 8381630347433607423, guid: e73df2d84b0434a40b357a701baef9a5, type: 3}
 --- !u!114 &565465810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,7 +1235,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -37.387405, y: 0, z: -25.261711, w: -54.565346}
+  m_margin: {x: -89.93182, y: 0, z: -92.96314, w: -54.565346}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
