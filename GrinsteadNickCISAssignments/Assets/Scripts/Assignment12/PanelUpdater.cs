@@ -17,12 +17,9 @@ public class PanelUpdater : MonoBehaviour
     [SerializeField] List<string> gearList;
 
     bool hasEquippedGear = false;
-    Button equipButton;
 
     private void Awake()
-    {
-        equipButton = GetComponent<Button>();
-
+    { 
         for (int i = 0; i < 5; ++i)
         {
             GameObject temp = Instantiate(menuItemPrefab, statsPanel);
@@ -44,7 +41,6 @@ public class PanelUpdater : MonoBehaviour
         if (!hasEquippedGear)
         {
             hasEquippedGear = true;
-            equipButton.interactable = false;
 
             for (int i = 1; i < 5; ++i)
             {
@@ -54,6 +50,8 @@ public class PanelUpdater : MonoBehaviour
                 tempItem.Hide();
                 gearButton.Add(tempItem);
             }
+
+            gameObject.SetActive(false);
         }
     }
 }

@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 4832815871517009005}
+  itemText: {fileID: 4832815873371580116}
 --- !u!1 &4832815873371580118
 GameObject:
   m_ObjectHideFlags: 0

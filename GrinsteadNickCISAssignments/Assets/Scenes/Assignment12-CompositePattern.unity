@@ -1148,14 +1148,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1993232a018e57e4a86a29a548d6a198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuItemPrefab: {fileID: 0}
-  statsPanel: {fileID: 0}
-  gearPanel: {fileID: 0}
-  statsButton: {fileID: 0}
-  gearButton: {fileID: 0}
-  statList: []
-  gearList: []
-  equipButton: {fileID: 0}
+  menuItemPrefab: {fileID: 4832815871517009007, guid: 94b99cf8032916c4c96b22169b657a66, type: 3}
+  statsPanel: {fileID: 74042650}
+  gearPanel: {fileID: 1154536834}
+  statsButton: {fileID: 1822432744}
+  gearButton: {fileID: 1487389838}
+  statList:
+  - 'Level: 23'
+  - 'Health: 500'
+  - 'Magic: 42'
+  - 'Strength: 55'
+  - 'Dexterity: 45'
+  gearList:
+  - Helmet
+  - Armor
+  - Gauntlets
+  - Sword
+  - Shield
 --- !u!114 &1732420336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,7 +1208,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1732420337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1732420335}
+        m_TargetAssemblyTypeName: PanelUpdater, Assembly-CSharp
+        m_MethodName: EquipGear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732420337
 MonoBehaviour:
   m_ObjectHideFlags: 0
