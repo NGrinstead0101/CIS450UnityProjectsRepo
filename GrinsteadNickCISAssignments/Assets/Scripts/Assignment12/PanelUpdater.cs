@@ -1,3 +1,10 @@
+/*
+* Nick Grinstead
+* PanelUpdater.cs
+* Assignment 12
+* This class adds MenuItems to the correct MenuButton and puts their objects 
+* into panels in the UI.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +20,16 @@ public class PanelUpdater : MonoBehaviour
     [SerializeField] MenuButton statsButton;
     [SerializeField] MenuButton gearButton;
 
+    [SerializeField] ButtonHandler gearButtonHandler;
+
     [SerializeField] List<string> statList;
     [SerializeField] List<string> gearList;
 
     bool hasEquippedGear = false;
 
+    /// <summary>
+    /// Creates initial MenuItems
+    /// </summary>
     private void Awake()
     { 
         for (int i = 0; i < 5; ++i)
@@ -36,6 +48,9 @@ public class PanelUpdater : MonoBehaviour
         gearButton.Add(tempGearItem);
     }
 
+    /// <summary>
+    /// Called by a button to add new MenuItems as leaves to gearButton
+    /// </summary>
     public void EquipGear()
     {
         if (!hasEquippedGear)
@@ -47,7 +62,12 @@ public class PanelUpdater : MonoBehaviour
                 GameObject temp = Instantiate(menuItemPrefab, gearPanel);
                 temp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gearList[i];
                 MenuItem tempItem = temp.GetComponent<MenuItem>();
-                tempItem.Hide();
+                
+                if (!gearButtonHandler.isActive)
+                {
+                    tempItem.Hide();
+                }
+
                 gearButton.Add(tempItem);
             }
 

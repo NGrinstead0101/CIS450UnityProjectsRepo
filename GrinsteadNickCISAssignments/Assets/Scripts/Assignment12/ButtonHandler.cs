@@ -1,3 +1,9 @@
+/*
+* Nick Grinstead
+* ButtonHandler.cs
+* Assignment 12
+* This class handles the logic for when a menu button is clicked.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,58 +11,39 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
-    bool isActive = false;
-    Image buttonImage;
-    Color defaultColor;
+    public bool isActive = false;
     [SerializeField] MenuComponent buttonComponent;
-    [SerializeField] List<ButtonHandler> buttonHandlers;
+    [SerializeField] List<ButtonHandler> buttonHandlers = new List<ButtonHandler>();
 
-    private void Awake()
-    {
-        buttonImage = GetComponent<Image>();
-        defaultColor = buttonImage.color;
-    }
-
+    /// <summary>
+    /// Called by the button when it is clicked
+    /// </summary>
     public void ButtonClicked()
     {
         SetIsActive(!isActive);
     }
 
-    public void SetIsActive(bool active)
+    /// <summary>
+    /// Updates isActive before calling Reveal() or Hide() on a MenuButton
+    /// </summary>
+    /// <param name="active"></param>
+    private void SetIsActive(bool active)
     {
         isActive = active;
 
+        // For the Character Status button to update its "child" buttons
+        foreach (ButtonHandler handler in buttonHandlers)
+        {
+            handler.isActive = isActive;
+        }
+
         if (isActive)
         {
-            buttonImage.color = Color.yellow;
-
-            if (buttonComponent != null)
-            {
-                buttonComponent.Reveal();
-            }
-            else
-            {
-                foreach (ButtonHandler button in buttonHandlers)
-                {
-                    button.SetIsActive(isActive);
-                }
-            }
+            buttonComponent.Reveal();
         }
         else
         {
-            buttonImage.color = defaultColor;
-
-            if (buttonComponent != null)
-            {
-                buttonComponent.Hide();
-            }
-            else
-            {
-                foreach (ButtonHandler button in buttonHandlers)
-                {
-                    button.SetIsActive(isActive);
-                }
-            }
+            buttonComponent.Hide();
         }
     }
 }

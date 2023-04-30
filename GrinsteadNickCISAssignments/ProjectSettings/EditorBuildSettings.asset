@@ -38,7 +38,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Assignment10-SingletonObjectPooling.unity
     guid: be20c8420da17c04fb9faef16f3a5fa5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Assignment11-FacadePattern.unity
     guid: 77aaffe95baead34eba605cc49608e68
+  - enabled: 1
+    path: Assets/Scenes/Assignment12-CompositePattern.unity
+    guid: c19478410fecdb94cabbac77dc157133
   m_configObjects: {}
